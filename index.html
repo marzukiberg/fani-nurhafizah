@@ -13,6 +13,9 @@
     --card:#FFFFFF; --border:#E8E1D7;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  section[id]{scroll-margin-top:80px}
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6}
   h1,h2,h3,.serif{font-family:'Playfair Display',serif}
   .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
@@ -236,6 +239,15 @@
 </section>
 
 <footer>© 2026 Fani Nurhafizah · Guru Pendidik · S1 PGMI UIN SUSKA Riau</footer>
+
+<script>
+  // Tutup menu mobile setelah klik link navbar
+  document.querySelectorAll('#navlinks a').forEach(function(a){
+    a.addEventListener('click',function(){
+      document.getElementById('navlinks').classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>
